@@ -57,7 +57,7 @@ function readUInt64LE (buffer, offset) {
   var b = buffer.readUInt32LE(offset + 4)
   b *= 0x100000000
 
-  verifuint(b + a, 0x001fffffffffffff)
+  verifuint(b + a, 0x7fffffffffffffff)
 
   return b + a
 }
@@ -120,7 +120,7 @@ function writePushDataInt (buffer, number, offset) {
 }
 
 function writeUInt64LE (buffer, value, offset) {
-  verifuint(value, 0x001fffffffffffff)
+  verifuint(value, 0x7fffffffffffffff)
 
   buffer.writeInt32LE(value & -1, offset)
   buffer.writeUInt32LE(Math.floor(value / 0x100000000), offset + 4)
