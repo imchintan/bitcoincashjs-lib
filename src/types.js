@@ -11,7 +11,7 @@ function Hash160bit (value) { return nBuffer(value, 20) }
 function Hash256bit (value) { return nBuffer(value, 32) }
 function Buffer256bit (value) { return nBuffer(value, 32) }
 
-var UINT53_MAX = Math.pow(2, 53) - 1
+var UINT53_MAX = Math.pow(2, 63) - 1
 var UINT31_MAX = Math.pow(2, 31) - 1
 function UInt2 (value) { return (value & 3) === value }
 function UInt8 (value) { return (value & 0xff) === value }
